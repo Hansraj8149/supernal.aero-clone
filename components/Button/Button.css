@@ -1,0 +1,33 @@
+.hover-button {
+   
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .text-up,
+  .text-down {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  
+  .text-down {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  
+  .hover-button:hover .text-up {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  
+  .hover-button:hover .text-down {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
