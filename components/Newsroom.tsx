@@ -46,17 +46,17 @@ const newses: NewsroomCardProps[] = [
   {
     title: "Supernal Appoints David McBride Chief Technology Officer",
     date: " March 25, 2024",
-    imgSrc: "images/TeamImg1.webp",
-  },
-  {
-    title: "Supernal Appoints David McBride Chief Technology Officer",
-    date: " March 25, 2024",
-    imgSrc: "images/NewsroomImg2.webp",
-  },
-  {
-    title: "Supernal Appoints David McBride Chief Technology Officer",
-    date: " March 25, 2024",
     imgSrc: "images/TeamImg2.webp",
+  },
+  {
+    title: "Supernal Appoints David McBride Chief Technology Officer",
+    date: " March 25, 2024",
+    imgSrc: "images/newsroomImg2.webp",
+  },
+  {
+    title: "Supernal Appoints David McBride Chief Technology Officer",
+    date: " March 25, 2024",
+    imgSrc: "images/NewsroomImg3.webp",
   },
   {
     title: "Supernal Appoints David McBride Chief Technology Officer",
