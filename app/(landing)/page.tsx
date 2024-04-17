@@ -2,6 +2,7 @@ import Approach from '@/components/Approach'
 import Features from '@/components/Features'
 import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
+import Navbar from '@/components/Navbar'
 import Network from '@/components/Network'
 import Newsroom from '@/components/Newsroom'
 import ScrollableImage from '@/components/S-A2'
@@ -13,6 +14,8 @@ const LandingPage = () => {
   return (
     <>
     <div className='bg-black' >
+
+    <Navbar/>
 
       <Hero/>
       {/* <HorizontalScroll/> */}

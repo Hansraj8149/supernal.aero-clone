@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { easeInOut, motion, useAnimation } from 'framer-motion';
 import TextDescButton from './TextDescButton';
 
@@ -8,23 +8,23 @@ const Approach = () => {
   const circle1Controls = useAnimation();
   const circle2Controls = useAnimation();
 
-  
-
   const circlePositions:any = {
-    safe: { x: 'calc(20% - 12px)', y: 'calc(50% - 12px)' },
-    quiet: { x: 'calc(20% - 45px)', y: 'calc(20% - 20px)' },
-    accessible: { x: 'calc(20% - 10px)', y: 'calc(20% - 40px)' },
-    customerCentric: { x: 'calc(20% - 40px)', y: 'calc(20% - 40px)' }
+    safe: { circle1: { x: 'calc(50% - 50%)', y: 'calc(50% - 50%)' }, circle2: { x: 'calc(50% - 50%)', y: 'calc(50% - 50%)' } },
+    quiet: { circle1: { x: 'calc(50% - 84%)', y: 'calc(50% - 50%)' }, circle2: { x: 'calc(50% - 201%)', y: 'calc(50% - 50%)' } },
+    accessible: { circle1: { x: 'calc(50% - 17%)', y: 'calc(50% - 50%)' }, circle2: { x: 'calc(50% - 120%)', y: 'calc(50% - 50%)' } },
+    customerCentric: { circle1: { x: 'calc(50% - 50%)', y: 'calc(50% - 20%)' }, circle2: { x: 'calc(50% - 50%)', y: 'calc(50% - 200%)' } },
   };
 
   const handleHover = async (item:any) => {
     await Promise.all([
       circle1Controls.start({
-        x: circlePositions[item].x,
+        x: circlePositions[item].circle1.x,
+        y: circlePositions[item].circle1.y,
         transition: { duration: 0.5 }
       }),
       circle2Controls.start({
-        y: circlePositions[item].y,
+        x: circlePositions[item].circle2.x,
+        y: circlePositions[item].circle2.y,
         transition: { duration: 0.5 }
       })
     ]);
@@ -33,7 +33,6 @@ const Approach = () => {
 
   return (
     <section className='my-20 container'>
-
       <TextDescButton
         title='A pragmatic approach'
         span='to building the extraordinary.'
@@ -41,50 +40,48 @@ const Approach = () => {
         buttonName='Learn more'
         color='white'
       />
-      <div className='flex flex-col lg:flex-row md:flex-row mt-10 gap-2  lg:items-start lg:justify-between '>
+      <div className='flex flex-col lg:flex-row md:flex-row mt-10 gap-2  lg:items-center lg:justify-center '>
         <div className='flex items-center justify-between lg:justify-around  lg:w-[70%]'>
+          <div className='flex flex-col '>
+            <ul className='text-white text-lg md:text-2xl lg:text-4xl space-y-2 font-bold'>
+              {['safe', 'quiet', 'accessible', 'customerCentric'].map((item) => (
+                <motion.li
+                  key={item}
+                  className='flex items-center gap-2'
+                  onMouseEnter={() => handleHover(item)}
+                  style={{ color: activeItem === item ? '#fff' : '#6b7280' }}
+                  initial={{ x: 0 }}
+                  whileHover={{ x: 20 }}
+                  transition={{ duration: 0.1, delay: 0.1, ease: easeInOut }}
+                >
+                  <motion.div
+                    className='bg-[#aff005] rounded-full h-4 w-4'
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={activeItem === item ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+                    transition={{ duration: 0, delay: 0 }}
+                  ></motion.div>
+                  {item.charAt(0).toUpperCase() + item.slice(1)}
+                </motion.li>
+              ))}
+            </ul>
+          </div>
 
-        <div className='flex flex-col '>
-          <ul className='text-white text-lg md:text-2xl lg:text-4xl space-y-2 font-bold'>
-            {['safe', 'quiet', 'accessible', 'customerCentric'].map((item) => (
-              <motion.li
-                key={item}
-                className='flex items-center gap-2'
-                onMouseEnter={() => handleHover(item)}
-                style={{ color: activeItem === item ? '#fff' : '#6b7280' }}
-                initial={{ x: 0 }}
-                whileHover={{ x: 20 }}
-                transition={{duration:0.1, delay:0.1, ease:easeInOut}}
-              >
-                <motion.div
-                  className='bg-[#aff005] rounded-full h-4 w-4'
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={activeItem === item ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
-                  transition={{ duration: 0,delay:0 }}
-                ></motion.div>
-                {item.charAt(0).toUpperCase() + item.slice(1)}
-              </motion.li>
-            ))}
-          </ul>
+          <div className='relative rounded-full bg-[#aff005] flex items-center justify-center h-36 w-36  md:h-72 md:w-72 lg:h-80 lg:w-80 overflow-hidden'>
+            <motion.div
+              className='absolute rounded-full bg-neutral-500 h-20 w-20 md:h-44 md:w-44 lg:h-48 lg:w-48'
+              animate={circle1Controls}
+            ></motion.div>
+            <motion.div
+              className='absolute rounded-full bg-neutral-600 h-14 w-14 md:h-26 md:w-26 lg:h-20 lg:w-20'
+              animate={circle2Controls}
+            ></motion.div>
+          </div>
         </div>
-
-        <div className='relative rounded-full bg-[#aff005] flex items-center justify-center h-36 w-36  md:h-72 md:w-72 lg:h-80 lg:w-80'>
-          <motion.div
-            className='absolute rounded-full bg-neutral-500 h-20 w-20 md:h-44 md:w-44 lg:h-48 lg:w-48'
-            animate={circle1Controls}
-          ></motion.div>
-          <motion.div
-            className='absolute rounded-full bg-neutral-600 h-14 w-14 md:h-26 md:w-26 lg:h-20 lg:w-20'
-            animate={circle2Controls}
-          ></motion.div>
-        </div>
-        </div>
-
 
         <motion.div
-        initial={{opacity:0,y:10}}
-        animate={{opacity:1,y:0}}
-        transition={{duration:0.5,delay:0.5,ease:easeInOut}}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5, ease: easeInOut }}
           className='text-white text-lg lg:text-3xl lg:w-[20%] text-start'
         >
           <p className={activeItem === 'safe' ? '' : 'hidden'}>
@@ -100,9 +97,7 @@ const Approach = () => {
             Designed around passengers and operators, Supernal vehicles and vertiports will be appointed with a host of modern features.
           </p>
         </motion.div>
-        </div>
-
-
+      </div>
     </section>
   );
 }
