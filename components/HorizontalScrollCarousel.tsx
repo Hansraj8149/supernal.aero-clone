@@ -29,8 +29,8 @@ export const HorizontalScrollCarousel = () => {
             <span className="text-[#60bfff]">Why</span>
             <br /> Advanced Air Mobility?
           </p>
-          <img src="images/logo.png" className="lg:h-20 lg:w-20 h-10 w-10 rotate-90" />
-          <img src="images/logo.png" className="lg:h-20 lg:w-20 h-10 w-10 rotate-90" />
+          <img src="images/arrow.svg" className="lg:h-20 lg:w-20 h-10 w-10 rotate-90" />
+          <img src="images/arrow.svg" className="lg:h-20 lg:w-20 h-10 w-10 rotate-90" />
         </motion.div>
         
           {cards.map((card) => {

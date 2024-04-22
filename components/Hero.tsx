@@ -44,11 +44,11 @@ export const Hero = () => {
             </motion.video>
           </div>
         <div className="absolute z-10 inset-0 flex flex-col text-white container tracking-tight leading-none">
-          <div className="flex flex-col items-center mb-80 md:mb-56 lg:mb-32 w-full">
+          <div className="flex flex-col items-center mb-96 md:mb-72 lg:mb-44 w-full">
             <img
               src="/images/logo.svg"
               alt="Logo"
-              className="h-full w-40   md:w-48 mt-5  lg:w-56"
+              className="h-full w-40 md:w-48 mt-5  lg:w-56"
             />
           
           </div>
@@ -59,7 +59,7 @@ export const Hero = () => {
             transition={{ delay: 0.1, duration: 0.5, ease: easeInOut }}
           >
             <div className="flex items-start col-span-1 md:col-span-2 lg:col-span-1 ">
-              <p className="text-[65px] md:text-[80px] font-medium lg:text-9xl tracking-wide leading-none">
+              <p className="text-[65px] md:text-[75px] font-normal lg:text-9xl tracking-wide leading-none">
                 An{" "}
                 <span className="text-[#60bfff]">energy revolution</span> is
                 here.
