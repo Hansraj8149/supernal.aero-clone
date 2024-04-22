@@ -34,10 +34,10 @@ const Approach = () => {
   return (
     <section className='my-20 container'>
       <TextDescButton
-        title='A pragmatic approach'
-        span='to building the extraordinary.'
-        description='We’re patiently and responsibly building a comprehensive solution where passengers and citizens are at the center of every decision we make.'
-        buttonName='Learn more'
+        title='Heating Oil Finder'
+        span='HVAC Directory'
+        description='purpose-build directory to help homeowners discover full service providers.'
+        buttonName='Visit HeatingOilFinder.com'
         color='white'
       />
       <div className='flex flex-col lg:flex-row md:flex-row mt-10 gap-2  lg:items-center lg:justify-center '>
@@ -55,7 +55,7 @@ const Approach = () => {
                   transition={{ duration: 0.1, delay: 0.1, ease: easeInOut }}
                 >
                   <motion.div
-                    className='bg-[#aff005] rounded-full h-4 w-4'
+                    className='bg-[f005] rounded-full h-4 w-4'
                     initial={{ opacity: 0, scale: 0 }}
                     animate={activeItem === item ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
                     transition={{ duration: 0, delay: 0 }}
@@ -66,7 +66,7 @@ const Approach = () => {
             </ul>
           </div>
 
-          <div className='relative rounded-full bg-[#aff005] flex items-center justify-center h-36 w-36  md:h-72 md:w-72 lg:h-80 lg:w-80 overflow-hidden'>
+          <div className='relative rounded-full bg-[#60bfff] flex items-center justify-center h-36 w-36  md:h-72 md:w-72 lg:h-80 lg:w-80 overflow-hidden'>
             <motion.div
               className='absolute rounded-full bg-neutral-500 h-20 w-20 md:h-44 md:w-44 lg:h-48 lg:w-48'
               animate={circle1Controls}

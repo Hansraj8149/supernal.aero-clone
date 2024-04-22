@@ -26,7 +26,7 @@ export const HorizontalScrollCarousel = () => {
           <div className="w-[3px] mr-5 bg-white lg:h-[300px] h-[200px]"></div>
 
           <p className="tracking-tight leading-none lg:text-[72px]  text-[35px]">
-            <span className="text-[#aff005]">Why</span>
+            <span className="text-[#60bfff]">Why</span>
             <br /> Advanced Air Mobility?
           </p>
           <img src="images/logo.png" className="lg:h-20 lg:w-20 h-10 w-10 rotate-90" />

@@ -7,14 +7,15 @@ interface ButtonProps {
   text:string,
   color:string,
 }
-export const Button = ({text, color}:ButtonProps) => {
+export const Button = ({ text, color }: ButtonProps) => {
   return (
-    <button className={`hover-button relative overflow-hidden py-5 px-16  md:py-6 md:px-20 lg:py-7 lg:px-20 rounded-lg text-sm md:text-md lg:text-lg  bg-[#aff005] text-black ${color==='black'?'hover:bg-black hover:text-white':'hover:bg-white hover:text-black'} `}>
+    <button className={`hover-button relative overflow-hidden py-5 px-16 md:py-6 md:px-20 lg:py-7 lg:px-24 text-sm md:text-md lg:text-[15px] bg-[#60bfff] text-black ${color === 'black' ? 'hover:bg-black hover:text-white' : 'hover:bg-white hover:text-black'} `} >
       <span className="text-up">{text}</span>
       <span className="text-down">{text}</span>
     </button>
   );
 };
+
 
 
 

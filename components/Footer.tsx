@@ -9,18 +9,17 @@ const Footer = () => {
        
 
             <div className='flex items-center  gap-4'>
-                <img src='images/logo.png' className=' h-24 w-24 lg:h-32 lg:w-32 object-contain ' alt='logo image'/>
-                <span className='text-6xl lg:text-8xl '>supernal</span>
+                <img src='images/logo.svg' className=' h-full   lg:w-72 object-contain ' alt='logo image'/>
                 
 
             </div>
             <div className='flex items-center gap-20 justify-between'>
 
             <div className='text-lg lg:text-2xl flex flex-col gap-4 hover:cursor-pointer'>
-                <p className='hover:text-[#aff005]'>News & Events</p>
-                <p className='flex hover:text-[#aff005] '>Careers <MoveRight/></p>
-                <p className='hover:text-[#aff005]'>Contact</p>
-                <p className='hover:text-[#aff005]'>About Us</p>
+                <p className='hover:text-[#60bfff]'>News & Events</p>
+                <p className='flex hover:text-[#60bfff] '>Careers <MoveRight/></p>
+                <p className='hover:text-[#60bfff]'>Contact</p>
+                <p className='hover:text-[#60bfff]'>About Us</p>
 
             </div>
 

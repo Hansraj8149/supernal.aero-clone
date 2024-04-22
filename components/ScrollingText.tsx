@@ -1,7 +1,7 @@
 // pages/index.js
 export default function ScrollingText() {
     return (
-      <div className="relative overflow-hidden bg-[#aff005] whitespace-nowrap h-20 md:h-28 lg:h-36 ">
+      <div className="relative overflow-hidden bg-[#60bfff] whitespace-nowrap h-20 md:h-28 lg:h-36 ">
         <div className="text-slide animate-slide h-full w-full font-bold text-2xl md:text-4xl lg:text-6xl hover:[animation-play-state:paused] flex items-center justify-center cursor-pointer">
 
         <div className="">

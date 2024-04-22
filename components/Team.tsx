@@ -9,9 +9,9 @@ const Team = () => {
         <div className="mt-20 flex  w-[100%] md:w-[50%] lg:w-[50%]  h-full">
 
         <TextDescButton
-          title="Revolution.
-It’s a team effort."
-          description="We know we can’t do this alone. It takes collaboration and commitment to realize an idea this bold."
+          title="Efficiency."
+          span="Putting the puzzle pieces together."
+          description="By providing simple, intutive tools to both fuel marketers and homeowners, bluePoint's SAAS solutions are revolutionizing the home energy industry."
           buttonName="Learn more"
           color="black"
           
@@ -20,8 +20,8 @@ It’s a team effort."
 
         <div className=" flex mt-10 items-center justify-center md:w-[50%] lg:w-[50%]">
           <TeamCard
-            title="Powered by Hyundai Motor Group"
-            description="As part of HMG, Supernal has the resources and expertise to develop AAM the right way. We are taking a thoughtful and responsible approach to developing the market and ensuring it effectively integrates into communities with minimal disruption."
+            title="Omni-channel account management"
+            description="By offering providers the choice of account management by website or app or text message. BluePoint eliminates a key pain point for energy marketers."
             buttonText="Learn more"
             imgSrc="images/TeamImg1.webp"
           />
@@ -30,8 +30,8 @@ It’s a team effort."
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 container">
       <div className=" mt-10 lg:-mt-24 md:-mt-16 flex items-center justify-center w-full">
           <TeamCard
-            title="Our partners"
-            description="We’re continually forging relationships with policymakers, municipalities, infrastructure partners, and many other companies and organizations to lay the groundwork for a new era of flight."
+            title="By Now Pay Later"
+            description={`Integration of PayPal's blue-chip, interest free "Pay in 4" installment program helps homeowners manage home finances with zero administrative burden and zero risk of customer default for the provider. `}
             buttonText="Learn More"
             imgSrc="images/TeamImg2.webp"
           />

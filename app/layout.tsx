@@ -5,13 +5,13 @@ import "./globals.css";
 const roboto = Roboto({
 
   subsets: ['latin'],
-  weight:['400','500','300']
+  weight:['400','500','300','100','700','900']
 
 })
 
 export const metadata: Metadata = {
-  title: "Supernal.aero",
-  description: "supernal aero",
+  title: "Blue Point",
+  description: "",
 };
 
 export default function RootLayout({

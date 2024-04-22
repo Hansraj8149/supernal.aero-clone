@@ -1,34 +1,56 @@
 'use client'
-import React from "react";
-import { easeInOut, motion } from "framer-motion";
-import {Button} from "./Button/Button";
+import React, { useRef } from "react";
+import { easeInOut, motion, useScroll, useTransform } from "framer-motion";
+import { Button } from "./Button/Button";
 
 export const Hero = () => {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["end end", "end start"],
+  });
+
+  const videoScale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
+  const videoOpacity = useTransform(scrollYProgress, [1, 1], [1, 1]);
+
   return (
-    <section className="w-full h-[220vh] md:h-[270vh] lg:h-[220vh] relative">
-      <div className="relative h-full">
-        <video
-          autoPlay
-          muted
-          loop
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-          }}
-        >
-          <source src="/media/supernalHero.mp4" type="video/mp4" />
-        </video>
+    <section className="w-full h-full">
+      <div>
+        <div className="relative h-[230vh] md:h-[250vh] lg:h-[220vh] 
+">
+          <div
+            style={{
+              position: "sticky",
+              top: 0,
+              height: '100vh',
+              overflow: "hidden",
+              zIndex: 0,
+            }}
+            ref={targetRef}
+          >
+            <motion.video
+              autoPlay
+              muted
+              loop
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                transform: videoScale,
+                opacity: videoOpacity,
+              }}
+            >
+              <source src="/media/bluepointHero.webm" type="video/webm"></source>
+            </motion.video>
+          </div>
         <div className="absolute z-10 inset-0 flex flex-col text-white container tracking-tight leading-none">
-          <div className="flex flex-col items-center mb-80 md:mb-36 lg:mb-32 w-full">
+          <div className="flex flex-col items-center mb-80 md:mb-56 lg:mb-32 w-full">
             <img
-              src="/images/logo.png"
+              src="/images/logo.svg"
               alt="Logo"
-              className="h-10 w-10 md:h-20 md:w-20 lg:h-20 lg:w-20"
+              className="h-full w-40   md:w-48 mt-5  lg:w-56"
             />
-            <span className="text-[15px] md:text-[20px] lg:text-[20px]">
-              supernal
-            </span>
+          
           </div>
           <motion.div
             className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 mb-96"
@@ -37,9 +59,9 @@ export const Hero = () => {
             transition={{ delay: 0.1, duration: 0.5, ease: easeInOut }}
           >
             <div className="flex items-start col-span-1 md:col-span-2 lg:col-span-1 ">
-              <p className="text-[65px] md:text-[88px] lg:text-9xl tracking-wide leading-none">
-                A{" "}
-                <span className="text-[#aff005]">mobility revolution</span> is
+              <p className="text-[65px] md:text-[80px] font-medium lg:text-9xl tracking-wide leading-none">
+                An{" "}
+                <span className="text-[#60bfff]">energy revolution</span> is
                 here.
               </p>
             </div>
@@ -54,25 +76,23 @@ export const Hero = () => {
             >
               <div className="w-1 bg-white h-full"></div>
               <div className="flex flex-col items-start space-y-8">
-                <p className="text-4xl md:text-7xl lg:text-8xl  ">
-                  Building tomorrow.<br />
-                  <span className="text-[#aff005]">From the ground up.</span>
+                <p className="text-4xl md:text-7xl lg:text-7xl  ">
+                  Connecting providers<br />
+                  <span className="text-[#60bfff]">and homeowners.</span>
                 </p>
                 <p className="text-2xl md:text-3xl">
-                  Our mission is to make Advanced Air Mobility (AAM) an additional
-                  safe and reliable option for everyday transportation needs. We’re
-                  currently developing an electric vertical take-off and landing
-                  (eVTOL) vehicle and a scalable, electrified, clean-energy
-                  ecosystem that will integrate seamlessly with existing transit
-                  infrastructure.
+                Our mission is to streamline communication between fuel marketers and
+                homeowners, unlockig real efficiencies, boosting provider profitability
+                and simultaneously reduing home energy bills.
                 </p>
                 <Button text='Get to know us' color='white'/>
               </div>
             </motion.div>
-            <div className="col-span-2 "></div>
+            <div className="col-span-3 "></div>
           </div>
         </div>
-        <div className="absolute inset-0 bg-black opacity-40"></div>
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+      </div>
       </div>
     </section>
   );

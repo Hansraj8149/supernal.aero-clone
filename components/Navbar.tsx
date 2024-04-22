@@ -6,8 +6,8 @@ const Navbar = () => {
 
         <div className='absolute flex flex-col right-9 top-10 gap-3 items-center justify-end '>
 
-        <div className='bg-[#aff005] w-12 h-[2.5px]'></div>
-        <div className='bg-[#aff005] w-12 h-[2.5px]'></div>
+        <div className='bg-[#60bfff] w-12 h-[2.5px]'></div>
+        <div className='bg-[#60bfff] w-12 h-[2.5px]'></div>
         </div>
     </div>
       

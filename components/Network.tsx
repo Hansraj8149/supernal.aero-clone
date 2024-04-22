@@ -17,10 +17,10 @@ const Network = () => {
         <div className=' h-full'>
 
         <TextDescButton
-          title='The Supernal'
-          span='air mobility network.'
-          description='A complete, end-to-end solution for Advanced Air Mobility within our cities.'
-          buttonName='See how it works'
+          title='The Heat Fleet'
+          span='Marketplace'
+          description='The pioneering marketing and sales system for will-call liquid heating fuel delivery.'
+          buttonName='Visit HeatFleet.com'
           color='white'
         />
         </div>

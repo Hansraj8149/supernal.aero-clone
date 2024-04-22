@@ -21,7 +21,7 @@ const TextDescButton = ({title, description,buttonName,span,color}:TextDescButto
                 <div className={`flex flex-col items-start space-y-4 text-${color} `}>
                   <p className=" text-4xl md:text-6xl lg:text-7xl ">
                     {title} <br/>
-                    <span className="text-[#aff005]"> {span}</span>
+                    <span className="text-[#60bfff]"> {span}</span>
                   </p>
                   <p className="text-[18px] ">
                  {description}
