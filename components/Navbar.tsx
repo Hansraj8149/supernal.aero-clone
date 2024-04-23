@@ -13,12 +13,12 @@ const Navbar = () => {
     <nav className="sticky z-20 top-0 cursor-pointer   bg-white">
       {/* Hamburger Menu */}
       <button
-        className="absolute top-4 right-4 w-16 h-16 border-none flex flex-col outline-none space-y-3 bg-transparent items-center justify-center "
+        className="absolute top-0 right-6 w-16 h-16 border-none flex flex-col space-y-7 outline-none  bg-transparent items-center justify-center "
         onClick={toggleMenu}
       >
 
-        <div className={`bg-[#60bfff] w-12 h-[2px] transition-all ${isOpen ? 'rotate-45' : 'rotate-0'}`}></div>
-        <div className={`bg-[#60bfff] w-12 h-[2px] transition-all ${isOpen ? '-rotate-45' : 'rotate-0'} mt-2`}></div>
+        <div className={`bg-[#60bfff] absolute w-12 h-[2px] transition-all ${isOpen ? 'rotate-45 translate-y-[12px] bg-black' : 'rotate-0'}`}></div>
+        <div className={`bg-[#60bfff] absolute w-12 h-[2px] transition-all ${isOpen ? '-rotate-45 bg-black ' : 'rotate-0'} mt-2`}></div>
       </button>
       {/* Header */}
       {isOpen && <Header />}
