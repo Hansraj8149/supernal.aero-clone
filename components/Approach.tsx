@@ -37,7 +37,7 @@ const Approach = () => {
         title='Heating Oil Finder'
         span='HVAC Directory'
         description='purpose-build directory to help homeowners discover full service providers.'
-        buttonName='Visit HeatingOilFinder.com'
+        buttonName='HeatingOilFinder.com'
         color='white'
       />
       <div className='flex flex-col lg:flex-row md:flex-row mt-10 gap-2  lg:items-center lg:justify-center '>
