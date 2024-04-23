@@ -19,7 +19,7 @@ const TextDescButton = ({title, description,buttonName,span,color}:TextDescButto
                 transition={{ delay: 0.5, duration: 0.5,ease:easeInOut }}
               >
                 <div className={`flex flex-col items-start space-y-5 text-${color} `}>
-                  <h3 className=" text-[40px] md:text-[72px] lg:text-[88px] leading-none mt-24px ">
+                  <h3 className=" text-[40px] md:text-[72px] lg:text-[80px] leading-none mt-24px ">
                     {title} <br/>
                     <span className="text-[#60bfff]"> {span}</span>
                   </h3>
