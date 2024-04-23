@@ -1,20 +1,22 @@
 import React from 'react'
 import TextDescButton from './TextDescButton'
+import '../app/globals.css'
 
 const Network = () => {
   return (
-    <div className='h-screen w-full mt-5 relative'>
+    <section className='bg-black h-screen relative overflow-hidden my-20'>
+      <div className='absolute  w-[100%] h-[100%] z-0'>
       <video
         autoPlay
         muted
         loop
-        style={{ width: '100%', height: '100%', objectFit: 'cover' }} // Added inline styles for video
+      className='aw-banner-video'
       >
         <source src="/media/supernalNetwork.mp4" type="video/mp4" />
       </video>
+</div>
+      <div className=' aw-container absolute z-10 my-24 left-0 '>
 
-      <div className=' container absolute top-0 left-0 lg:left-20 md:left-10 z-10 py-24 '>
-        <div className=' h-full'>
 
         <TextDescButton
           title='The Heat Fleet'
@@ -23,13 +25,13 @@ const Network = () => {
           buttonName='Visit HeatFleet.com'
           color='white'
         />
-        </div>
-      </div>
 
-      <div className=" z-8 absolute inset-0 bg-black opacity-30"></div>
+        </div>
+
+      <div className=" z-8 absolute inset-0 bg-black opacity-40"></div>
 
       {/* <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30"></div> Overlay */}
-    </div>
+    </section>
   )
 }
 

@@ -3,6 +3,7 @@ import React from "react";
 import NewsroomCard from "./NewsroomCard";
 import {easeInOut, motion} from 'framer-motion'
 import {Button} from "./Button/Button";
+import '../app/globals.css'
 
 const Newsroom = () => {
   return (
@@ -12,7 +13,7 @@ const Newsroom = () => {
       whileInView={{opacity:1,y:0}}
       animate={{opacity:1,y:0}}
       transition={{duration:0.5, delay:0.5, ease:easeInOut}}
-      className="flex container flex-col gap-10 ">
+      className="flex aw-container flex-col gap-10 ">
         <div className="flex items-start justify-between">
           <h1 className="text-black  text-4xl m lg:text-6xl ">Newsroom</h1>
           <Button text='See all news' color='black'/>

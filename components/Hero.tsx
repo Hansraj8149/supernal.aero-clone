@@ -2,6 +2,8 @@
 import React, { useRef } from "react";
 import { easeInOut, motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "./Button/Button";
+import '../app/globals.css'
+
 
 export const Hero = () => {
   const targetRef = useRef(null);
@@ -14,16 +16,14 @@ export const Hero = () => {
   const videoOpacity = useTransform(scrollYProgress, [1, 1], [1, 1]);
 
   return (
-    <section className="w-full h-full">
-      <div>
-        <div className="relative h-[230vh] md:h-[250vh] lg:h-[220vh] 
-">
+    <section className="h-[240vh]  relative w-[100%] m-0">
           <div
             style={{
               position: "sticky",
               top: 0,
               height: '100vh',
               overflow: "hidden",
+              width:"100%",
               zIndex: 0,
             }}
             ref={targetRef}
@@ -34,7 +34,10 @@ export const Hero = () => {
               loop
               style={{
                 width: "100%",
+                maxWidth:"100%",
                 height: "100%",
+                minHeight:"100vh",
+                objectPosition:"center",
                 objectFit: "cover",
                 transform: videoScale,
                 opacity: videoOpacity,
@@ -43,8 +46,8 @@ export const Hero = () => {
               <source src="/media/bluepointHero.webm" type="video/webm"></source>
             </motion.video>
           </div>
-        <div className="absolute z-10 inset-0 flex flex-col text-white container tracking-tight leading-none">
-          <div className="flex flex-col items-center mb-96 md:mb-72 lg:mb-44 w-full">
+        <div className=" aw-container absolute z-10 inset-0 flex flex-col text-white tracking-tight leading-none">
+          <div className="flex flex-col items-center mb-44 lg:mb-44 w-full">
             <img
               src="/images/logo.svg"
               alt="Logo"
@@ -53,34 +56,30 @@ export const Hero = () => {
           
           </div>
           <motion.div
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 mb-96"
+            className=" -mt-[32vh] flex items-end overflow-hidden min-h-[92vh]"
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.5, ease: easeInOut }}
           >
-            <div className="flex items-start col-span-1 md:col-span-2 lg:col-span-1 ">
-              <p className="text-[65px] md:text-[75px] font-normal lg:text-9xl tracking-wide leading-none">
+              <h3 className="text-[64px] md:text-[88px] lg:text-[136px] font-normal w-[100%] md:w-[80%] lg:max-w-[1048px] leading-none ">
                 An{" "}
                 <span className="text-[#60bfff]">energy revolution</span> is
                 here.
-              </p>
-            </div>
-            <div className=""></div>
+              </h3>
           </motion.div>
-          <div className="grid grid-cols-6">
             <motion.div
-              className="flex items-start gap-6 col-span-6 lg:col-span-4 md:col-span-4 "
+              className="mt-[420px] max-w-[900px] pb-[152px] flex gap-5"
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0, duration: 0.5 }}
             >
               <div className="w-1 bg-white h-full"></div>
               <div className="flex flex-col items-start space-y-8">
-                <p className="text-4xl md:text-7xl lg:text-7xl  ">
+                <h3 className="text-[40px] md:text-[72px] lg:text-[88px] leading-none mt-24px  ">
                   Connecting providers<br />
                   <span className="text-[#60bfff]">and homeowners.</span>
-                </p>
-                <p className="text-2xl md:text-3xl">
+                </h3>
+                <p className="text-[28px] md:text-[32px] lg:text-[40px] leading-none my-[40px]">
                 Our mission is to streamline communication between fuel marketers and
                 homeowners, unlockig real efficiencies, boosting provider profitability
                 and simultaneously reduing home energy bills.
@@ -90,10 +89,7 @@ export const Hero = () => {
             </motion.div>
             <div className="col-span-3 "></div>
           </div>
-        </div>
         <div className="absolute inset-0 bg-black opacity-50"></div>
-      </div>
-      </div>
     </section>
   );
 };

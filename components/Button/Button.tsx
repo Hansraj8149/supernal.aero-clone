@@ -9,9 +9,9 @@ interface ButtonProps {
 }
 export const Button = ({ text, color }: ButtonProps) => {
   return (
-    <button className={`hover-button font-medium relative overflow-hidden py-5 px-16 md:py-6 md:px-20 lg:py-7 lg:px-[85px] text-sm md:text-md lg:text-[17px] bg-[#60bfff] text-black ${color === 'black' ? 'hover:bg-black hover:text-white' : 'hover:bg-white hover:text-black'} `} >
-      <span className="text-up">{text}</span>
-      <span className="text-down">{text}</span>
+    <button className={`hover-button font-medium relative overflow-hidden h-[42px]  lg:h-[56px] min-w-[140px] lg:min-w-[180px] text-[14px]  lg:text-[18px] text-center px-[12px] py-[24px] cursor-pointer inline-flex justify-center items-center bg-[#60bfff] text-black ${color === 'black' ? 'hover:bg-black hover:text-white' : 'hover:bg-white hover:text-black'} `} >
+      <span className="text-up inline-flex">{text}</span>
+      <span className="text-down inline-flex">{text}</span>
     </button>
   );
 };
