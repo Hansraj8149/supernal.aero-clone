@@ -1,17 +1,29 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react';
+import Header from './Header';
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div className='sticky z-20 top-0 cursor-pointer'>
+    <nav className="sticky z-20 top-0 cursor-pointer   bg-white">
+      {/* Hamburger Menu */}
+      <button
+        className="absolute top-4 right-4 w-16 h-16 border-none flex flex-col outline-none space-y-3 bg-transparent items-center justify-center "
+        onClick={toggleMenu}
+      >
 
-        <div className='absolute flex flex-col right-9 top-10 gap-3 items-center justify-end '>
+        <div className={`bg-[#60bfff] w-12 h-[2px] transition-all ${isOpen ? 'rotate-45' : 'rotate-0'}`}></div>
+        <div className={`bg-[#60bfff] w-12 h-[2px] transition-all ${isOpen ? '-rotate-45' : 'rotate-0'} mt-2`}></div>
+      </button>
+      {/* Header */}
+      {isOpen && <Header />}
+    </nav>
+  );
+};
 
-        <div className='bg-[#60bfff] w-12 h-[2.5px]'></div>
-        <div className='bg-[#60bfff] w-12 h-[2.5px]'></div>
-        </div>
-    </div>
-      
-  )
-}
-
-export default Navbar
+export default Navbar;

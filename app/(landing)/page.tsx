@@ -1,6 +1,7 @@
 import Approach from '@/components/Approach'
 import Features from '@/components/Features'
 import Footer from '@/components/Footer'
+import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import Navbar from '@/components/Navbar'
 import Network from '@/components/Network'
@@ -14,9 +15,7 @@ const LandingPage = () => {
   return (
     <>
     <div className='bg-black' >
-
-    <Navbar/>
-
+<Navbar/>
       <Hero/>
       {/* <HorizontalScroll/> */}
       <Features/>
