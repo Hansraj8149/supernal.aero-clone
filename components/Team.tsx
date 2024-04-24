@@ -5,9 +5,9 @@ import '../app/globals.css'
 
 const Team = () => {
   return (
-    <section className="py-20  bg-white h-full">
+    <section className="py-20  bg-white h-full " id="companySection">
       <div className="aw-container">
-        <div className="flex space-y-20 gap-[24px] borde">
+        <div className="flex space-y-20 flex-col lg:flex-row gap-[24px]">
           <div className="w-[100%] h-full mb-10  flex flex-col gap-20">
             <TextDescButton
           title="Efficiency."

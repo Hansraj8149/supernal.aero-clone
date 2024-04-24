@@ -47,7 +47,7 @@ export const Hero = () => {
             </motion.video>
           </div>
         <div className=" aw-container absolute z-10 inset-0 flex flex-col text-white tracking-tight leading-none">
-          <div className="flex flex-col items-center mb-44 lg:mb-44 w-full">
+          <div className="flex flex-col items-center mb-44 w-full">
             <img
               src="/images/logo.svg"
               alt="Logo"
@@ -68,7 +68,7 @@ export const Hero = () => {
               </h3>
           </motion.div>
             <motion.div
-              className="mt-[420px] max-w-[900px] pb-[152px] flex gap-5"
+              className=" mt-[320px] lg:mt-[420px] max-w-[900px] pb-[152px] flex gap-5"
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0, duration: 0.5 }}
