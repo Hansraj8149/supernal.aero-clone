@@ -5,7 +5,7 @@ import '../app/globals.css'
 import {easeInOut, motion} from 'framer-motion'
 const Network = () => {
   return (
-    <section className='bg-black h-[70vh] md:h-[80vh] lg:h-[100vh] relative overflow-hidden my-20'>
+    <section className='bg-black h-[60vh] md:h-[80vh] lg:h-[100vh] relative overflow-hidden my-20'>
       <div className='absolute  w-[100%]    z-0'>
       <video
         autoPlay
