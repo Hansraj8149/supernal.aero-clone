@@ -29,9 +29,9 @@ const ScrollableImage = () => {
   }, [scrollDirection, controls]);
 
   return (
-    <div className=" h-screen overflow-hidden bg-white flex items-center justify-center lg:pt-10">
+    <div className=" overflow-hidden bg-white flex items-center justify-center  ">
       <motion.div
-        className="w-full h-full bg-cover bg-center"
+        className="w-full h-[80vh] md:h-[90vh] lg:h-[100vh] bg-cover bg-center"
         style={{ backgroundImage: `url('images/SA2.jpg')` }}
         initial={{ width: "90vw" }} 
         animate={controls}

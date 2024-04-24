@@ -8,7 +8,7 @@ const Header = () => {
     <header className='h-screen w-[100%] overflow-hidden bg-white'>
       <div className='aw-container mt-10 mb-10'>
         <div className="w-[100%] flex items-center justify-center mb-5">
-        <img src="/images/logo.png" className=" w-[200px] h-[50px] lg:w-[400px] lg:h-[100px] border border-black" alt='blue point logo' />
+        <img src="/images/logoColored.svg" className=" w-[150px]  lg:w-[300px] h-full my-5 " alt='blue point logo' />
         </div>
           <div className="w-[100%] h-[100vh-112px] flex flex-col md:flex-row lg:flex-row items-center pt-[48px] lg:gap-[24px]  ">
             <ul className="w-[100%] list-none h-full pl-[16px] mr-[32px] border-black border-l-[2px] relative">
