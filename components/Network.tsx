@@ -28,7 +28,7 @@ const Network = () => {
         />
 
         <motion.div
-        initial={{opacity:0,y:350}}
+        initial={{opacity:0,y:300}}
         whileInView={{opacity:1,y:0}}
         transition={{duration:0.9, delay:0.5, ease:easeInOut}}
          className=' absolute top-0 left-2/4 flex items-end justify-end'>
