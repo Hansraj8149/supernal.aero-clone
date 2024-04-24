@@ -13,7 +13,7 @@ interface TextDescButtonProps {
 const TextDescButton = ({title, description,buttonName,span,color}:TextDescButtonProps) => {
   return (
     <motion.div
-                className={`flex items-start h-full  border-${color} border-l-2 pl-8`}
+                className={`flex items-start h-full  border-${color} border-l-2 pl-2 md:pl-8 lg:pl-8`}
                 initial={{ opacity: 0, y:100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.5,ease:easeInOut }}
