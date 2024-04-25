@@ -56,6 +56,21 @@ import {
       fetchData().then((data) => setPricesData(data));
     }, []);
 
+    useEffect(() => {
+      function handleResize() {
+          setWindowSize(window.innerWidth);
+      }
+    
+      window.addEventListener('resize', handleResize);
+    
+      return () => {
+          window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+    
+    function createLineGraph() {
+      return <Line key={windowSize} data={data.data} options={data.options}   />;
+    }
        
   const data:any = {
     data: {
@@ -144,21 +159,7 @@ options: {
 }
 }
 
-useEffect(() => {
-  function handleResize() {
-      setWindowSize(window.innerWidth);
-  }
 
-  window.addEventListener('resize', handleResize);
-
-  return () => {
-      window.removeEventListener('resize', handleResize);
-  };
-}, []);
-
-function createLineGraph() {
-  return <Line key={windowSize} data={data.data} options={data.options}   />;
-}
   
   
    
