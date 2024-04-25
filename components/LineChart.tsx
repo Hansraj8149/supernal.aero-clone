@@ -67,11 +67,11 @@ import {
           window.removeEventListener('resize', handleResize);
       };
     }, []);
-    
     function createLineGraph() {
       return <Line key={windowSize} data={data.data} options={data.options}   />;
     }
        
+    
   const data:any = {
     data: {
         labels: priceData.map(
