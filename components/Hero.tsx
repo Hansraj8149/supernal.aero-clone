@@ -16,7 +16,7 @@ export const Hero = () => {
   const videoOpacity = useTransform(scrollYProgress, [1, 1], [1, 1]);
 
   return (
-    <section className="h-[240vh]  relative w-[100%] m-0">
+    <section className="  h-[210vh] lg:h-[240vh]  relative w-[100%] m-0">
           <div
             style={{
               position: "sticky",
