@@ -11,6 +11,8 @@ import ScrollingText from '@/components/ScrollingText'
 import Team from '@/components/Team'
 import React from 'react'
 
+import "../globals.css";
+
 const LandingPage = () => {
   return (
     <>

@@ -28,7 +28,7 @@ export default function ScrollingText() {
   useEffect(() => {
     fetchData().then(data => setTextData(data));
     // console.log(textData)
-  }, [textData]);
+  }, []);
 
 
     return (

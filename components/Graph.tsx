@@ -1,13 +1,14 @@
 'use client'
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { easeInOut, motion, useAnimation } from "framer-motion";
+import TextDescButton from "./TextDescButton";
 import '../app/globals.css'
 import LineChart from "./LineChart";
 import { Button } from "./Button/Button";
 
 const Graph = () => {
   return (
-    <section className=" overflow-hidden bg-white h-full  relative z-0 lg:pt-0">
+    <section className=" overflow-hidden bg-white h-full   relative z-0 lg:pt-0">
      
         <LineChart />
 

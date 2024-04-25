@@ -36,74 +36,136 @@ import {
         throw new Error("Failed to fetch data");
       }
       const data = await response.json();
+      console.log(data)
       return data;
     } catch (error) {
       console.log("Error fetching data:", error);
       return null;
     }
   }
+
+
+
+
   
   const LineChart = () => {
     const [priceData, setPricesData] = useState<any>([]);
-  
+    const [windowSize, setWindowSize] = useState<number>(window.innerWidth);
+
     useEffect(() => {
       fetchData().then((data) => setPricesData(data));
     }, []);
-    
-  
-    const data = {
-        data: {
-            labels: priceData.map(
-                (priceData: any) => {
-                  const date = new Date(priceData.date);
-                  return date.toLocaleDateString('en-US', { month: 'short' , day:'numeric', year:'numeric'});
-                }
-              ),
-      datasets: [
-        {
-          label: `Heating Oil Average(USD)`,
-          data: priceData.map((data:any) => {
-            return data.price
 
-          }),
-          fill: true,
-          backgroundColor: "#f6fcff",
-          borderColor: "#60bfff",
-          borderWidth: 2,
-          pointHoverBackgroundColor:'#60bfff',
-          pointHoverBorderWidth: 1,
-          pointRadius: 2,
-          pointBackgroundColor:'#60bfff'
-        },
-      ],
-    },
-    options: {
-      tension:0.4,
-
-        responsive: true,
-          cornerRadius:19,
-        scales: {
-            y:{
-                grid:{
-                    display:false
-                }
-            },
-            x: {
-                grid: {
-                    display:false
-                },
-                ticks: {
-                  // Include a dollar sign in the ticks
-                  callback: function() {
-                      return '';
-                  }
-              }
+       
+  const data = {
+    data: {
+        labels: priceData.map(
+            (priceData: any) => {
+              const date = new Date(priceData.date);
+              return date.toLocaleDateString('en-US', { month: 'short' , day:'numeric', year:'numeric'});
             }
-        },
-     
+          ),
+  datasets: [
+    {
+      label: `Heating Oil Average(USD)`,
+      data: priceData.map((data:any) => {
+        return data.price
+
+      }),
+      fill: true,
+      backgroundColor: "#f6fcff",
+      borderColor: "#60bfff",
+      borderWidth: 2,
+      pointHoverBackgroundColor:'#60bfff',
+      pointHoverBorderWidth: 2,
+      pointRadius: 0,
+      pointBackgroundColor:'#60bfff'
+    },
+  ],
+},
+options: {
+  tension:0.4,
+
+    responsive: true,
+      cornerRadius:19,
+
+      events: ['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove'],
+      interaction: {
+        intersect:false,
+        mode: "nearest"
+     },
+     plugins: {
+      tooltip: {
+        events: ['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove']
+      },
+      legend: {
+        display: false,
         
-    }
+      },
+    },
+    scales: {
+
+      
+        y:{
+          border: {
+            display:false
+          },
+          ticks: {
+            display: false,
+            beginAtZero: true,
+          },
+            grid:{
+                display:false,
+                drawBorder: false,
+                drawOnChartArea:false,
+            },
+          
+        },
+        x: {
+          border: {
+            display:false
+          },
+            grid: {
+                display:false,
+                drawBorder: false,
+                drawOnChartArea:false,
+
+            },
+
+            ticks: {
+              display: false,
+              beginAtZero: true,
+             
+          }
+        }
+    },
+ 
+    
 }
+}
+
+useEffect(() => {
+  function handleResize() {
+      setWindowSize(window.innerWidth);
+  }
+
+  window.addEventListener('resize', handleResize);
+
+  return () => {
+      window.removeEventListener('resize', handleResize);
+  };
+}, []);
+
+function createLineGraph() {
+  return <Line key={windowSize} data={data.data} options={data.options}   />;
+}
+  
+  
+   
+
+ 
+    
+
   
     return (
       <div>
@@ -113,7 +175,7 @@ import {
           </div>
         )}
         <div >
-          <Line data={data.data} options={data.options} />
+         {createLineGraph()}
         </div>
       </div>
     );
