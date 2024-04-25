@@ -57,7 +57,7 @@ import {
     }, []);
 
        
-  const data = {
+  const data:any = {
     data: {
         labels: priceData.map(
             (priceData: any) => {
