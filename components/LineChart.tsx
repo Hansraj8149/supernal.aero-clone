@@ -6,12 +6,12 @@ import {
     Tooltip,
     PointElement,
     LineElement,
-    Filler
+    Filler,
+    scales
   } from "chart.js";
   import { useEffect, useState } from "react";
   import { Line } from "react-chartjs-2";
   
-  // Register ChartJS components using ChartJS.register
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -19,6 +19,7 @@ import {
     LineElement,
     Tooltip,
     Filler,
+    scales,
   );
   
   async function fetchData() {
@@ -43,40 +44,42 @@ import {
   }
   
   const LineChart = () => {
-    const [size,setSize] =useState(0);
     const [priceData, setPricesData] = useState<any>([]);
-    const emptyArray = new Array(size).fill('')
-   
+  
     useEffect(() => {
       fetchData().then((data) => setPricesData(data));
-       fetchData().then((data)=> setSize(data.length))
     }, []);
     
   
     const data = {
         data: {
-            labels: emptyArray.map(
+            labels: priceData.map(
                 (priceData: any) => {
-                return priceData
+                  const date = new Date(priceData.date);
+                  return date.toLocaleDateString('en-US', { month: 'short' , day:'numeric', year:'numeric'});
                 }
               ),
       datasets: [
         {
-          label: "Price (USD)",
-          data: priceData.map((entry: any) => entry.price),
+          label: `Heating Oil Average(USD)`,
+          data: priceData.map((data:any) => {
+            return data.price
+
+          }),
           fill: true,
-          backgroundColor: "#f6fcff", // Set background color for the chart
+          backgroundColor: "#f6fcff",
           borderColor: "#60bfff",
           borderWidth: 2,
           pointHoverBackgroundColor:'#60bfff',
           pointHoverBorderWidth: 1,
-          pointRadius: 1,
-          lineTension: 0.5,
+          pointRadius: 2,
           pointBackgroundColor:'#60bfff'
         },
       ],
     },
     options: {
+      tension:0.4,
+
         responsive: true,
           cornerRadius:19,
         scales: {
@@ -88,7 +91,13 @@ import {
             x: {
                 grid: {
                     display:false
-                }
+                },
+                ticks: {
+                  // Include a dollar sign in the ticks
+                  callback: function() {
+                      return '';
+                  }
+              }
             }
         },
      

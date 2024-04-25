@@ -1,11 +1,11 @@
-import Approach from '@/components/Approach'
+import HeatingOilFinder from '@/components/HeatingOilFinder'
 import Features from '@/components/Features'
 import Footer from '@/components/Footer'
 import Graph from '@/components/Graph'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import Navbar from '@/components/Navbar'
-import Network from '@/components/Network'
+import HeatFleet from '@/components/HeatFleet'
 import Newsroom from '@/components/Newsroom'
 import ScrollingText from '@/components/ScrollingText'
 import Team from '@/components/Team'
@@ -19,8 +19,8 @@ const LandingPage = () => {
       <Hero/>
       {/* <HorizontalScroll/> */}
       <Features/>
-      <Network/>
-      <Approach/>
+      <HeatFleet/>
+      <HeatingOilFinder/>
       <Team/>
 
       <Graph/>

@@ -4,7 +4,7 @@ import { easeInOut, motion, useAnimation } from 'framer-motion';
 import TextDescButton from './TextDescButton';
 import '../app/globals.css'
 
-const Approach = () => {
+const HeatingOilFinder = () => {
 
   return (
     <section className='my-20 aw-container'>
@@ -17,8 +17,8 @@ const Approach = () => {
         buttonName='HeatingOilFinder.com'
         color='white'
       />
-     <div className='h-full w-full'>
-      <img src='/images/WebsiteImg.png' alt='website image' className='h-full w-full'/>
+     <div className='h-full w-full flex items-end justify-end'>
+      <img src='/images/WebsiteImg.webp' alt='website image' className='h-1/4 w-2/3'/>
      </div>
      </div>
 
@@ -26,4 +26,4 @@ const Approach = () => {
   );
 }
 
-export default Approach;
+export default HeatingOilFinder;

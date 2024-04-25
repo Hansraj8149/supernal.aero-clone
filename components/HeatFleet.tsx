@@ -3,7 +3,7 @@ import React from 'react'
 import TextDescButton from './TextDescButton'
 import '../app/globals.css'
 import {easeInOut, motion} from 'framer-motion'
-const Network = () => {
+const HeatFleet = () => {
   return (
     <section className='bg-black h-[60vh] md:h-[80vh] lg:h-[100vh] relative overflow-hidden my-20'>
       <div className='absolute  w-[100%]    z-0'>
@@ -33,7 +33,7 @@ const Network = () => {
         transition={{duration:0.9, delay:0.5, ease:easeInOut}}
          className=' absolute top-0 left-2/4 flex items-end justify-end'>
 
-        <img src='images/MobileImg.webp' className='h-3/4 w-3/4 border border-black rounded-3xl' alt='mobile image'/>
+        <img src='images/MobileImg.webp' className='h-3/4 w-3/4  rounded-3xl' alt='mobile image'/>
         </motion.div>
         </div>
 
@@ -43,4 +43,4 @@ const Network = () => {
   )
 }
 
-export default Network
+export default HeatFleet
